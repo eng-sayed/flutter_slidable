@@ -138,6 +138,7 @@ class SlidableAction extends StatelessWidget {
     this.autoClose = _kAutoClose,
     required this.onPressed,
     this.icon,
+    this.iconChild,
     this.spacing = 4,
     this.label,
     this.borderRadius = BorderRadius.zero,
@@ -164,6 +165,9 @@ class SlidableAction extends StatelessWidget {
   /// An icon to display above the [label].
   final IconData? icon;
 
+  /// An iconChild to display above the [label].
+  final Widget? iconChild;
+
   /// The space between [icon] and [label] if both set.
   ///
   /// Defaults to 4.
@@ -183,6 +187,11 @@ class SlidableAction extends StatelessWidget {
     final children = <Widget>[];
 
     if (icon != null) {
+      children.add(
+        Icon(icon),
+      );
+    }
+    if (iconChild != null) {
       children.add(
         Icon(icon),
       );
